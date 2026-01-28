@@ -333,32 +333,63 @@ footer {
     margin-bottom: 1.5rem;
 }
 
-.benchmark-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 2rem;
-}
-
-.benchmark-table th,
-.benchmark-table td {
-    padding: 0.75rem 1rem;
-    text-align: left;
+/* Task Cards */
+.task-card {
+    margin-top: 2rem;
+    padding-bottom: 1.5rem;
     border-bottom: 1px solid var(--color-border);
 }
 
-.benchmark-table th {
-    font-weight: 800;
-    font-size: 0.9rem;
+.task-card:last-of-type {
+    border-bottom: none;
 }
 
-.benchmark-table th:not(:first-child),
-.benchmark-table td:not(:first-child) {
-    text-align: center;
+.task-card h3 {
+    font-family: var(--font-headline);
+    font-size: 1.3rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.task-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.task-os {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.os-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-muted);
+}
+
+.task-rating {
     font-size: 1.5rem;
+    line-height: 1;
 }
 
-.benchmark-table tbody tr:hover {
-    background: rgba(0, 0, 0, 0.02);
+.task-software {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.task-comment {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    line-height: 1.5;
+    margin-top: 0.25rem;
+}
+
+.task-comment:empty {
+    display: none;
 }
 
 .emoji-legend {
@@ -377,20 +408,20 @@ footer {
 
 .emoji-legend ul {
     list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
 }
 
 .emoji-legend li {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
 }
 
 .emoji-legend li span {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 /* Notes Section */
@@ -615,6 +646,19 @@ footer {
 }
 
 /* Subpage Responsive */
+@media (max-width: 700px) {
+    .task-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .task-os {
+        padding: 0.75rem;
+        background: rgba(0, 0, 0, 0.02);
+        border-radius: 4px;
+    }
+}
+
 @media (max-width: 600px) {
     .content h1 {
         font-size: 2.5rem;
@@ -625,8 +669,7 @@ footer {
         flex-wrap: wrap;
     }
 
-    .benchmark-table th:not(:first-child),
-    .benchmark-table td:not(:first-child) {
-        padding: 0.5rem;
+    .artists {
+        column-count: 1;
     }
 }
