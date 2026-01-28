@@ -67,19 +67,19 @@ body {
 .left {
     position: fixed;
     left: 0;
-    top: 0;
+    bottom: 0;
     width: 45%;
     height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    padding: 2rem;
 }
 
 .left img {
     max-width: 100%;
-    max-height: 100%;
+    max-height: calc(100vh - 1rem);
     object-fit: contain;
+    object-position: bottom;
 }
 
 /* Right Side - Content */
@@ -519,6 +519,70 @@ footer {
     font-size: 0.8rem;
     color: var(--color-muted);
     margin-left: 0.25rem;
+}
+
+/* E-Commerce Sections */
+.ecom-section {
+    margin-bottom: 2.5rem;
+}
+
+.ecom-section h2 {
+    font-family: var(--font-headline);
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 0.75rem;
+}
+
+.ecom-section p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.ecom-section a {
+    color: #1968fc;
+}
+
+.problem-list {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.problem-list li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.problem-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--color-muted);
+}
+
+.platform-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    margin: 1rem 0;
+}
+
+.platform-list li a {
+    font-weight: 600;
+}
+
+.client-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.5rem;
+    margin: 1rem 0;
+}
+
+.client-list li {
+    color: var(--color-muted);
 }
 
 /* Legal Sections */
