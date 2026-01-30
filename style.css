@@ -526,6 +526,34 @@ footer {
     margin-left: 0.25rem;
 }
 
+/* Gaming Sections */
+.gaming-section {
+    margin-bottom: 2.5rem;
+}
+
+.gaming-section h2 {
+    font-family: var(--font-headline);
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 0.75rem;
+}
+
+.gaming-section p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.games-list {
+    list-style: none;
+    column-count: 2;
+    column-gap: 2rem;
+}
+
+.games-list li {
+    padding: 0.35rem 0;
+    break-inside: avoid;
+}
+
 /* Story Sections (Entrepreneur page) */
 .story-section {
     margin-bottom: 2.5rem;
@@ -545,6 +573,14 @@ footer {
 
 .story-section p:last-child {
     margin-bottom: 0;
+}
+
+.section-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1.25rem;
+    border-radius: 4px;
 }
 
 .story-section a {
@@ -782,6 +818,16 @@ footer {
 .footer-links a:hover {
     color: var(--color-text);
 }
+
+.hosting-logo {
+    height: 2em;
+    width: auto;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+    position: relative;
+    top: -0.15em;
+}
+
 
 /* Subpage Footer */
 .page footer {
