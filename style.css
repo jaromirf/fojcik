@@ -68,25 +68,21 @@ body {
     position: fixed;
     left: 0;
     bottom: 0;
-    width: 45%;
     height: 100vh;
     display: flex;
     align-items: flex-end;
-    justify-content: center;
 }
 
 .left img {
-    max-width: 100%;
-    max-height: calc(100vh - 1rem);
-    object-fit: contain;
-    object-position: bottom;
+    height: calc(100vh - 1rem);
+    width: auto;
 }
 
 /* Right Side - Content */
 .right {
-    margin-left: 45%;
-    width: 55%;
-    padding: 4rem 4rem;
+    margin-left: max(300px, calc((100vh - 1rem) * 0.75));
+    flex: 1;
+    padding: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -165,8 +161,22 @@ footer {
     font-size: 0.85rem;
 }
 
-/* Responsive */
-@media (max-width: 1100px) {
+/* Responsive - Text scales, image stays fixed */
+@media (max-width: 1400px) {
+    .intro h1 {
+        font-size: 3.5rem;
+    }
+
+    .right {
+        padding: 3rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .intro h1 {
+        font-size: 2.8rem;
+    }
+
     .intro-columns {
         grid-template-columns: 1fr;
         gap: 0;
@@ -175,33 +185,69 @@ footer {
     .intro-col p {
         margin-bottom: 1rem;
     }
+
+    .intro-col:nth-child(2) {
+        margin-top: 1rem;
+    }
+
+    .right {
+        padding: 2.5rem 2rem;
+    }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
+    .intro h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .intro-col p {
+        font-size: 0.9rem;
+    }
+
+    .right {
+        padding: 2rem 1.5rem;
+    }
+
+    .signature-name {
+        font-size: 0.9rem;
+    }
+
+    .signature-title {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 800px) {
     .container {
         flex-direction: column;
     }
 
     .left {
         position: relative;
-        width: 100%;
         height: auto;
-        padding: 2rem;
+        padding: 1rem;
     }
 
     .left img {
+        height: auto;
         max-height: 70vh;
+        width: auto;
+        max-width: 100%;
     }
 
     .right {
         margin-left: 0;
-        width: 100%;
         padding: 2rem;
         min-height: auto;
     }
 
     .intro h1 {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
+    }
+
+    .intro-col p {
+        font-size: 1rem;
     }
 }
 
@@ -820,7 +866,7 @@ footer {
 }
 
 .hosting-logo {
-    height: 2em;
+    height: 3em;
     width: auto;
     margin-left: 0.4rem;
     vertical-align: middle;
